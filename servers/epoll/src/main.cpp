@@ -146,7 +146,7 @@ namespace
             return false;
         }
 
-        std::this_thread::sleep_for(std::chrono::milliseconds(300));
+        //std::this_thread::sleep_for(std::chrono::milliseconds(500));
         send(fd, response, strlen(response), MSG_DONTWAIT);
 
         return true;
