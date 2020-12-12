@@ -14,6 +14,7 @@
 namespace
 {
     constexpr int max_events = 32;
+    constexpr char * response = "Good";
 
     auto create_and_bind(std::string const& port)
     {
@@ -145,8 +146,8 @@ namespace
             return false;
         }
 
-        std::cout << fd << " says: " <<  buf;
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        std::this_thread::sleep_for(std::chrono::milliseconds(300));
+        send(fd, response, strlen(response), MSG_DONTWAIT);
 
         return true;
     }
